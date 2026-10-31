@@ -28,9 +28,9 @@ class LoginPage{
         await this.userName.fill(username)
         await this.password.fill(password)
         await Promise.all([
-            this.loginButton.click()
-        ])
-        await expect(this.homePageDashboard).toBeVisible()
+            this.loginButton.click(),
+            expect(this.homePageDashboard).toBeVisible()
+        ]) 
     }
 
     async logout() {

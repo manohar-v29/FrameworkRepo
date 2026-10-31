@@ -26,7 +26,7 @@ export default defineConfig({
   expect: {timeout:3000},
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
-    headless:false,
+    headless:true,
     actionTimeout:15000,
     testIdAttribute:"data-test",
     permissions:["notifications"],
