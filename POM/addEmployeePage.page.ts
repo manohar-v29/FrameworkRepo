@@ -37,7 +37,8 @@ class AddEmployee{
         await expect(this.employeeId).not.toBeEmpty()
         await this.saveButton.click()
         await this.page.waitForTimeout(5000)
-        await expect(this.personalDetails).toBeVisible()
+        await this.personalDetails.waitFor({ state: 'visible', timeout: 10000 });
+        await expect(this.personalDetails).toBeVisible();
     }
 }
 
