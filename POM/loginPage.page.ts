@@ -27,18 +27,16 @@ class LoginPage{
 
         await this.userName.fill(username)
         await this.password.fill(password)
-        await Promise.all([
-            this.loginButton.click(),
-            expect(this.homePageDashboard).toBeVisible()
-        ]) 
+        await this.loginButton.click()
+        await this.homePageDashboard.waitFor({ state: 'visible', timeout: 7000 }); 
+        await expect(this.homePageDashboard).toBeVisible()
     }
 
     async logout() {
         await this.userProfileMenu.click()
-        await Promise.all([
-            await this.logoutOption.click()
-        ])
-        //await expect(this.loginLogo).toBeVisible()
+        await this.logoutOption.click()
+        await this.logoutOption.waitFor({ state: 'visible', timeout: 7000 }); 
+        await expect(this.loginLogo).toBeVisible()
     }
 }
 
