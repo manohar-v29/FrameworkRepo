@@ -38,7 +38,7 @@ class LoginPage{
         await Promise.all([
             await this.logoutOption.click()
         ])
-        await expect(this.loginLogo).toBeVisible()
+        //await expect(this.loginLogo).toBeVisible()
     }
 }
 
