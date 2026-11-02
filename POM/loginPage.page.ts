@@ -34,8 +34,8 @@ class LoginPage{
 
     async logout() {
         await this.userProfileMenu.click()
-        await this.logoutOption.click()
         await this.logoutOption.waitFor({ state: 'visible', timeout: 7000 }); 
+        await this.logoutOption.click()
         await expect(this.loginLogo).toBeVisible()
     }
 }
